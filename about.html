@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About | Swaply</title>
+
+<style>
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  margin:0;
+  background:linear-gradient(135deg,#f5f7fa,#e4ecff);
+  color:#333;
+}
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px 80px;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  display:inline-block;
+  margin-bottom:30px;
+  padding:12px 24px;
+  background:linear-gradient(to right,#6a11cb,#2575fc);
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.back-btn:hover{
+  background:linear-gradient(to right,#2575fc,#6a11cb);
+  transform:scale(1.05);
+}
+
+h1{
+  text-align:center;
+  font-size:46px;
+  color:#1a237e;
+}
+.intro{
+  text-align:center;
+  font-size:20px;
+  max-width:850px;
+  margin:20px auto 60px;
+  line-height:1.7;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.card{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+.card h3{
+  color:#2575fc;
+  margin-bottom:15px;
+}
+footer{
+  background:#1a237e;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn">Back</a>
+
+  <h1>About Swaply</h1>
+  <p class="intro">
+    Swaply is a user-to-user <b>Book Exchange System</b> designed to help readers
+    exchange books easily while promoting sustainability and knowledge sharing.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>📘 Our Vision</h3>
+      <p>Create a community where books circulate freely instead of being wasted.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔄 What We Offer</h3>
+      <p>Upload books, send exchange requests, track history, and connect with readers.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Sustainability</h3>
+      <p>Reduce paper waste and encourage responsible book reuse.</p>
+    </div>
+
+    <div class="card">
+      <h3>👥 Community</h3>
+      <p>Connect students and readers to support collaborative learning.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Swaply | Book Exchange System
+</footer>
+
+</body>
+</html>
