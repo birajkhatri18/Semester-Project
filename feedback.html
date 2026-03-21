@@ -1,167 +1,201 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Feedback | Swaply</title>
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback | Swaply</title>
 
-    <style>
-      /* ----------- GLOBAL ----------- */
-      body {
-        font-family: "Segoe UI", Arial, sans-serif;
-        margin: 0;
-        background: linear-gradient(135deg, #f5f7fa, #e4ecff);
-        color: #333;
+  <style>
+    /* ----------- GLOBAL ----------- */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ----------- CONTAINER ----------- */
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* ----------- BACK BUTTON ----------- */
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 10px 22px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 10px #00c6ff;
+    }
+
+    /* ----------- HEADINGS ----------- */
+    h1 {
+      text-align: center;
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    /* ----------- FORM ----------- */
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 15px 0 6px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transition: 0.3s;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #bbb;
+    }
+
+    input:focus,
+    textarea:focus {
+      box-shadow: 0 0 10px #00c6ff;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    /* ----------- BUTTON ----------- */
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00c6ff;
+    }
+
+    /* ----------- THANK YOU MESSAGE ----------- */
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 22px;
+      color: #00ffcc;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* ----------- ANIMATION ----------- */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      /* ----------- CONTAINER ----------- */
+    /* ----------- RESPONSIVE ----------- */
+    @media (max-width: 480px) {
       .container {
-        max-width: 600px;
-        margin: 80px auto;
-        background: white;
-        padding: 40px;
-        border-radius: 18px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        animation: fadeIn 0.8s ease-in-out;
+        padding: 25px;
       }
 
-      /* ----------- BACK BUTTON ----------- */
-      .back-btn {
-        display: inline-block;
-        margin-bottom: 25px;
-        padding: 10px 22px;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-        color: white;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-      .back-btn:hover {
-        transform: scale(1.05);
-      }
-
-      /* ----------- HEADINGS ----------- */
       h1 {
-        text-align: center;
-        color: #1a237e;
-        margin-bottom: 10px;
+        font-size: 24px;
       }
+
       p {
-        text-align: center;
-        margin-bottom: 30px;
-        color: #555;
+        font-size: 14px;
       }
+    }
+  </style>
+</head>
 
-      /* ----------- FORM ----------- */
-      label {
-        font-weight: bold;
-        display: block;
-        margin: 15px 0 6px;
-      }
-      input,
-      textarea {
-        width: 100%;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 15px;
-      }
-      textarea {
-        resize: none;
-        height: 120px;
-      }
+<body>
 
-      /* ----------- BUTTON ----------- */
-      button {
-        width: 100%;
-        margin-top: 25px;
-        padding: 14px;
-        border: none;
-        border-radius: 10px;
-        background: linear-gradient(to right, #2575fc, #6a11cb);
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      button:hover {
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-        transform: scale(1.03);
-      }
+  <div class="container">
+    <!-- BACK BUTTON -->
+    <a href="index.html" class="back-btn">Back</a>
 
-      /* ----------- THANK YOU MESSAGE ----------- */
-      .thank-you {
-        display: none;
-        text-align: center;
-        font-size: 22px;
-        color: #28a745;
-        animation: fadeIn 0.8s ease-in-out;
-      }
+    <!-- FORM -->
+    <div id="formBox">
+      <h1>Feedback</h1>
+      <p>We’d love to hear your thoughts about Swaply</p>
 
-      /* ----------- ANIMATION ----------- */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
+      <form onsubmit="submitFeedback(event)">
+        <label>Name</label>
+        <input type="text" placeholder="Full Name" required />
 
-  <body>
-    <div class="container">
-      <!-- BACK BUTTON -->
-      <a href="index.html" class="back-btn">Back</a>
+        <label>Email</label>
+        <input type="email" placeholder="Enter Email" required />
 
-      <!-- FORM -->
-      <div id="formBox">
-        <h1>Feedback</h1>
-        <p>We’d love to hear your thoughts about Swaply</p>
+        <label>Description</label>
+        <textarea placeholder="Write your feedback here..." required></textarea>
 
-        <form
-          onsubmit="submitFeedback(event)";
-        >
-          <label>Name</label>
-          <input type="text" placeholder="FullName" required />
-
-          <label>Email</label>
-          <input type="email" id="email" placeholder="Enter Email" required />
-
-          <label>Description</label>
-          <textarea
-            placeholder="Write your feedback here..."
-            required
-          ></textarea>
-
-          <button type="submit">Submit Feedback</button>
-        </form>
-      </div>
-
-      <!-- THANK YOU MESSAGE -->
-      <div id="thankYou" class="thank-you">
-        🙏 Thanks for your feedback! <br />
-        Redirecting to home page...
-      </div>
+        <button type="submit">Submit Feedback</button>
+      </form>
     </div>
 
-    <script>
-      function submitFeedback(e) {
-        e.preventDefault();
+    <!-- THANK YOU MESSAGE -->
+    <div id="thankYou" class="thank-you">
+      🙏 Thanks for your feedback! <br />
+      Redirecting to home page...
+    </div>
+  </div>
 
-        // Hide form & show thank you message
-        document.getElementById("formBox").style.display = "none";
-        document.getElementById("thankYou").style.display = "block";
+  <script>
+    function submitFeedback(e) {
+      e.preventDefault();
 
-        // Redirect after 3 seconds
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 3000);
-      }
-    </script>
-  </body>
+      document.getElementById("formBox").style.display = "none";
+      document.getElementById("thankYou").style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    }
+  </script>
+
+</body>
 </html>
