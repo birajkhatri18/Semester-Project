@@ -5,114 +5,180 @@
 <title>Help | Swaply</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
   font-family:'Segoe UI', Arial, sans-serif;
-  margin:0;
   background:linear-gradient(135deg,#f5f7fa,#e4ecff);
   color:#333;
 }
+
+/* HEADER */
+header{
+  background:linear-gradient(to right,#6a11cb,#2575fc);
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+header h1{
+  font-size:40px;
+}
+
+/* SECTION */
 section{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
-  padding:60px 20px 80px;
+  padding:50px 20px 80px;
 }
 
 /* BACK BUTTON */
 .back-btn{
   display:inline-block;
   margin-bottom:30px;
-  padding:12px 24px;
+  padding:12px 26px;
   background:linear-gradient(to right,#6a11cb,#2575fc);
   color:white;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
   font-weight:bold;
   transition:0.3s;
 }
 .back-btn:hover{
   background:linear-gradient(to right,#2575fc,#6a11cb);
-  transform:scale(1.05);
+  transform:scale(1.07);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-h1{
-  text-align:center;
-  font-size:44px;
-  color:#1a237e;
+/* GRID LAYOUT */
+.steps-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
+
+/* STEP CARD */
 .step{
-  background:white;
-  margin:30px 0;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
   padding:25px;
-  border-radius:14px;
-  box-shadow:0 10px 22px rgba(0,0,0,0.1);
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
+  position:relative;
+  overflow:hidden;
 }
+
+/* HOVER EFFECT */
 .step:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
+
+/* NUMBER BADGE */
+.step::before{
+  content:attr(data-step);
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  background:linear-gradient(to right,#6a11cb,#2575fc);
+  color:white;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* TEXT */
 .step h3{
   color:#2575fc;
   margin-bottom:10px;
+  font-size:20px;
 }
+
+.step p{
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* FOOTER */
 footer{
   background:#1a237e;
   color:white;
   text-align:center;
   padding:25px;
+  margin-top:40px;
 }
+
 footer a{
-  color: white;
-  text-decoration: none;
+  color:#90caf9;
+  text-decoration:none;
+  font-weight:bold;
 }
 footer a:hover{
-  text-decoration: underline;
+  text-decoration:underline;
 }
 </style>
 </head>
 
 <body>
 
+<header>
+  <h1>📘 How to Use Swaply</h1>
+</header>
+
 <section>
 
   <!-- BACK BUTTON -->
-  <a href="index.html" class="back-btn">Back</a>
+  <a href="index.html" class="back-btn"> Back</a>
 
-  <h1>How to Use Swaply</h1>
+  <div class="steps-container">
 
-  <div class="step">
-    <h3>1️⃣ Create an Account</h3>
-    <p>Sign up and login to access the book exchange features.</p>
-  </div>
+    <div class="step" data-step="1">
+      <h3>Create an Account</h3>
+      <p>Sign up and log in to unlock all book exchange features on Swaply.</p>
+    </div>
 
-  <div class="step">
-    <h3>2️⃣ Upload Books</h3>
-    <p>Add book details including title, type, and condition.</p>
-  </div>
+    <div class="step" data-step="2">
+      <h3>Upload Books</h3>
+      <p>Add your books with details like title, category, and condition.</p>
+    </div>
 
-  <div class="step">
-    <h3>3️⃣ Browse & Request</h3>
-    <p>Browse books from other users and send exchange requests.</p>
-  </div>
+    <div class="step" data-step="3">
+      <h3>Browse & Request</h3>
+      <p>Explore available books and send exchange requests to other users.</p>
+    </div>
 
-  <div class="step">
-    <h3>4️⃣ Accept or Reject</h3>
-    <p>Users can manage incoming requests from their dashboard.</p>
-  </div>
+    <div class="step" data-step="4">
+      <h3>Accept or Reject</h3>
+      <p>Manage incoming requests easily from your dashboard.</p>
+    </div>
 
-  <div class="step">
-    <h3>5️⃣ Complete Exchange</h3>
-    <p>Once accepted, coordinate and complete the exchange.</p>
-  </div>
+    <div class="step" data-step="5">
+      <h3>Complete Exchange</h3>
+      <p>Once accepted, coordinate with the user and exchange books smoothly.</p>
+    </div>
 
-  <div class="step">
-    <h3>6️⃣ Track History</h3>
-    <p>All exchanges are saved for transparency and reference.</p>
+    <div class="step" data-step="6">
+      <h3>Track History</h3>
+      <p>Keep track of all your exchanges for transparency and future reference.</p>
+    </div>
+
   </div>
 
 </section>
 
 <footer>
-  Need help?<a href="support"> Contact Swaply Support</a>
+  Need help? <a href="support">Contact Swaply Support</a>
 </footer>
 
 </body>
