@@ -137,7 +137,7 @@ body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f7; }
 .left-footer { text-align:center; color:#666; font-size:14px; border-top:1px solid #ddd; padding-top:10px; margin-top:20px; }
 .right-footer { text-align:center; border-top:1px solid #ddd; padding-top:10px; margin-top:20px; color:#666; }
 .right-col .btn-block { display:flex; flex-direction:column; gap:15px; }
-/* 🔔 NOTIFICATION BADGE */
+/* 🔔 NOTIFICATION  */
 .badge {
     background: #dc3545;
     color: white;
